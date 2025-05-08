@@ -28,30 +28,6 @@ type PersonKeys = keyof Person; // "name" | "age"
 - TypeScript guesses the type for us.
 - It saves time and catches mistakes early.
 
-````ts
+```ts
 let name = "Alice";
-
-## 5. How TypeScript improves code quality
-
-- Catches errors while coding
-- Helps with autocomplete
-- Makes refactoring safer
-- Code is easier to understand
-
-## 6. Union and intersection types (with example)
-
-- **Union**: allows multiple types
-
-```ts
-let id: string | number;
 ```
-
-- **Intersection**: combines types
-
-```ts
-type A = { name: string };
-type B = { age: number };
-type Person = A & B; // must have name and age
-```
-
-````
