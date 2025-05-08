@@ -38,14 +38,13 @@ let name = "Alice";
 - Makes refactoring safer
 - Code is easier to understand
 
-
 ## 6. Union and intersection types (with example)
 
 - **Union**: allows multiple types
 
 ```ts
 let id: string | number;
-````
+```
 
 - **Intersection**: combines types
 
@@ -54,3 +53,5 @@ type A = { name: string };
 type B = { age: number };
 type Person = A & B; // must have name and age
 ```
+
+````
