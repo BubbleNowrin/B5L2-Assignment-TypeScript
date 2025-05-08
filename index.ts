@@ -2,42 +2,42 @@ function formatString(input: string, toUpper?: boolean): string {
   return toUpper ?? true ? input.toUpperCase() : input.toLowerCase();
 }
 
-
-function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[]{
-return items.filter(item=> item.rating>=4);
+function filterByRating(
+  items: { title: string; rating: number }[]
+): { title: string; rating: number }[] {
+  return items.filter((item) => item.rating >= 4);
 }
 
-function concatenateArrays<T>(...arrays: T[][]): T[]{
-    return arrays.flat();
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  return arrays.flat();
 }
 
 class Vehicle {
-    private make:string;
-    private year:number;
-    
-    getInfo():string{
-        return `Make: ${this.make}, Year: ${this.year}`;
-    }
-    constructor(make:string,year:number){
-        this.make=make;
-        this.year=year;
-        
-    }
+  private make: string;
+  private year: number;
+
+  getInfo(): string {
+    return `Make: ${this.make}, Year: ${this.year}`;
+  }
+  constructor(make: string, year: number) {
+    this.make = make;
+    this.year = year;
+  }
 }
 
-class Car extends Vehicle{
-    private model:string;
-    constructor(make:string,year:number,model:string){
-        super(make,year);
-        this.model=model;
-    }
-    getModel():string{
-        return `Model: ${this.model}`;
-    }
+class Car extends Vehicle {
+  private model: string;
+  constructor(make: string, year: number, model: string) {
+    super(make, year);
+    this.model = model;
+  }
+  getModel(): string {
+    return `Model: ${this.model}`;
+  }
 }
 
-function processValue(value: string | number): number{
-return typeof value ==="string" ? value.length :value*2;
+function processValue(value: string | number): number {
+  return typeof value === "string" ? value.length : value * 2;
 }
 
 interface Product {
@@ -45,10 +45,9 @@ interface Product {
   price: number;
 }
 
-function getMostExpensiveProduct(products: Product[]): Product | null{
-
-    if (products.length === 0) {
-    return null; 
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length === 0) {
+    return null;
   }
 
   let mostExpensive = products[0];
@@ -60,7 +59,6 @@ function getMostExpensiveProduct(products: Product[]): Product | null{
   }
 
   return mostExpensive;
-
 }
 
 enum Day {
@@ -70,28 +68,28 @@ enum Day {
   Thursday,
   Friday,
   Saturday,
-  Sunday
+  Sunday,
 }
 
-function getDayType(day: Day): string{
-    switch (day){
-        case Day.Saturday:
-            return "Weekend";
-        case Day.Sunday:
-            return "Weekend";
-        default:
-            return "Weekday";
-    }
-
+function getDayType(day: Day): string {
+  switch (day) {
+    case Day.Saturday:
+      return "Weekend";
+    case Day.Sunday:
+      return "Weekend";
+    default:
+      return "Weekday";
+  }
 }
 
-async function squareAsync(n: number): Promise<number>{
-    return new Promise((resolve, reject) => {
-if(n<0){
-    reject(new Error("Negative number not allowed"));
-}else{
-    setTimeout(()=>{
-        return resolve(n*n);
-    },1000)
+async function squareAsync(n: number): Promise<number> {
+  return new Promise((resolve, reject) => {
+    if (n < 0) {
+      reject(new Error("Negative number not allowed"));
+    } else {
+      setTimeout(() => {
+        return resolve(n * n);
+      }, 1000);
     }
-})}
+  });
+}
